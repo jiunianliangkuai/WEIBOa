@@ -1,0 +1,27 @@
+//
+//  PrefixHeader.pch
+//  weiboa
+//
+//  Created by Liangkuai on 16/5/2.
+//  Copyright © 2016年 Liangkuai. All rights reserved.
+//
+
+#import "UIView+Extension.h"
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define screenBounds [UIScreen mainScreen].bounds
+#define screenWidth [UIScreen mainScreen].bounds.size.width
+
+#ifdef DEBUG // 处于开发阶段
+#define AnnaLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define AnnaLog(...)
+#endif
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
