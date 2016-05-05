@@ -10,13 +10,10 @@
 #import "NSString+Extension.h"
 #import "AnnaUserModel.h"
 #import "AnnaStatusModel.h"
+#import "AnnaContentPhotosView.h"
 
 #define kMargin 10
-#define vipImageViewWH 15
-
-#define kStatusPhotoWH 70
-#define kStatusPhotoMargin 10
-#define kStatusPhotoMaxCol(count) ((count==4)?2:3)
+#define kvipImageViewWH 15
 
 @implementation AnnaStatusFrameModel
 -(void)setStatusModel:(AnnaStatusModel *)statusModel{
@@ -40,8 +37,8 @@
 //    vip的frame
     CGFloat vipImageViewX = CGRectGetMaxX(_nameLabelFrame) + kMargin;
     CGFloat vipImageViewY = nameLabelY;
-    CGFloat vipImageViewWidth = vipImageViewWH;
-    CGFloat vipImageViewHeight = vipImageViewWH;
+    CGFloat vipImageViewWidth = kvipImageViewWH;
+    CGFloat vipImageViewHeight = kvipImageViewWH;
     self.vipImageViewFrame = CGRectMake(vipImageViewX, vipImageViewY, vipImageViewWidth, vipImageViewHeight);
     
 //    计算timeLabel的frame
@@ -67,7 +64,7 @@
 //    计算微博配图的frame
     CGFloat contentPhotosViewX = kMargin;
     CGFloat contentPhotosViewY = CGRectGetMaxY(_contentLabelFrame) + kMargin;
-    CGSize contentPhotosViewSize = [AnnaStatusFrameModel sizeWithCount:statusModel.pic_urls.count];
+    CGSize contentPhotosViewSize = [AnnaContentPhotosView sizeWithCount:statusModel.pic_urls.count];
     self.contentPhotosViewFrame = (CGRect){{contentPhotosViewX, contentPhotosViewY}, contentPhotosViewSize};
     
 //    计算总原创微博的frame
@@ -83,28 +80,6 @@
 }
 
 
-#warning 这里教学中把这个方法方法photosView里面去.但好像放在这里也没什么不可以....
-/**
- *  通过配图数量计算其frame
- *
- *  @param count 图片数量
- */
-+ (CGSize)sizeWithCount:(NSUInteger)count
-{
-    if (!count) {
-        return CGSizeZero;
-    }
-    // 最大列数（一行最多有多少列）
-    int maxCols = kStatusPhotoMaxCol(count);
-    
-    ///Users/apple/Desktop/课堂共享/05-iPhone项目/1018/代码/黑马微博2期35-相册/黑马微博2期/Classes/Home(首页)/View/HWStatusPhotosView.m 列数
-    NSUInteger cols = (count >= maxCols)? maxCols : count;
-    CGFloat photosW = cols * kStatusPhotoWH + (cols - 1) * kStatusPhotoMargin;
-    
-    // 行数
-    NSUInteger rows = (count + maxCols - 1) / maxCols;
-    CGFloat photosH = rows * kStatusPhotoWH + (rows - 1) * kStatusPhotoMargin;
-    return CGSizeMake(photosW, photosH);
-}
+
 
 @end

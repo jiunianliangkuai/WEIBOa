@@ -9,9 +9,10 @@
 #import "AnnaContentPhotosView.h"
 #import "AnnaContentPhotoView.h"
 
-#define kStatusPhotoWH 70
-#define kStatusPhotoMargin 10
-#define kStatusPhotoMaxCol(count) ((count==4)?2:3)
+#define kContentPhotoWH 70
+#define kContentPhotoMargin 10
+#warning 相当高明的写法
+#define kContentPhotoMaxCol(count) ((count==4)?2:3)
 
 @interface AnnaContentPhotosView ()
 
@@ -49,13 +50,13 @@
         
         for (int i = 0; i < self.subviews.count; i++ ) {
             
-            int row = i / kStatusPhotoMaxCol(count);
-            int column = i % kStatusPhotoMaxCol(count);
+            int row = i / kContentPhotoMaxCol(count);
+            int column = i % kContentPhotoMaxCol(count);
             
-            CGFloat contentPhotoViewX = column * kStatusPhotoWH + column * kStatusPhotoMargin;
-            CGFloat contentPhotoViewY = row * kStatusPhotoWH + row * kStatusPhotoMargin;
+            CGFloat contentPhotoViewX = column * kContentPhotoWH + column * kContentPhotoMargin;
+            CGFloat contentPhotoViewY = row * kContentPhotoWH + row * kContentPhotoMargin;
             AnnaContentPhotoView *contentPhotoView = (AnnaContentPhotoView *)self.subviews[i];
-            contentPhotoView.frame = CGRectMake(contentPhotoViewX, contentPhotoViewY, kStatusPhotoWH, kStatusPhotoWH);
+            contentPhotoView.frame = CGRectMake(contentPhotoViewX, contentPhotoViewY, kContentPhotoWH, kContentPhotoWH);
             
 //            把数据发送给自定义的contentPhotoView
             contentPhotoView.pictureModel = self.thumbnail_pic[i];
@@ -63,4 +64,27 @@
     }
 }
 
+#warning 这里教学中把这个方法方法photosView里面去.但好像放在Frame模型中也没什么不可以....
+/**
+ *  通过配图数量计算其frame
+ *
+ *  @param count 图片数量
+ */
++ (CGSize)sizeWithCount:(NSUInteger)count
+{
+    if (!count) {
+        return CGSizeZero;
+    }
+    // 最大列数（一行最多有多少列）
+    int maxCols = kContentPhotoMaxCol(count);
+    
+    ///Users/apple/Desktop/课堂共享/05-iPhone项目/1018/代码/黑马微博2期35-相册/黑马微博2期/Classes/Home(首页)/View/HWStatusPhotosView.m 列数
+    NSUInteger cols = (count >= maxCols)? maxCols : count;
+    CGFloat photosW = cols * kContentPhotoWH + (cols - 1) * kContentPhotoMargin;
+    
+    // 行数
+    NSUInteger rows = (count + maxCols - 1) / maxCols;
+    CGFloat photosH = rows * kContentPhotoWH + (rows - 1) * kContentPhotoMargin;
+    return CGSizeMake(photosW, photosH);
+}
 @end

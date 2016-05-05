@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic)NSArray *thumbnail_pic;
 
++ (CGSize)sizeWithCount:(NSUInteger)count;
+
 @end
