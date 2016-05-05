@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+#define nameLabelFont [UIFont systemFontOfSize:15]
+
+#define sourceLabelFont [UIFont systemFontOfSize:13]
+
+#define timeLabelFont [UIFont systemFontOfSize:13]
+
+#define contentLabelFont [UIFont systemFontOfSize:14]
+
+
 @class AnnaStatusModel;
 
 @interface AnnaStatusFrameModel : NSObject

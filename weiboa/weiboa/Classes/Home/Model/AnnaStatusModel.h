@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AnnaUserModel.h"
+@class AnnaUserModel;
 @class AnnaStatusModel;
 
 @interface AnnaStatusModel : NSObject
@@ -50,5 +50,6 @@
 /**	int	表态数*/
 @property (nonatomic, assign) int attitudes_count;
 
+@property (nonatomic, copy)NSString *sourceLabelText;
 
 @end

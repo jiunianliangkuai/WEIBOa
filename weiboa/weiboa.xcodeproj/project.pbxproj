@@ -16,6 +16,9 @@
 		F50E81911CD6CCBB00F61C49 /* AnnaMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50E81901CD6CCBB00F61C49 /* AnnaMessageViewController.m */; };
 		F50E81941CD6CCCB00F61C49 /* AnnaProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50E81931CD6CCCB00F61C49 /* AnnaProfileViewController.m */; };
 		F50E81971CD6D67300F61C49 /* AnnaNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50E81961CD6D67300F61C49 /* AnnaNavViewController.m */; };
+		F526255C1CDB38DD0068CCA8 /* AnnaStatusPictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F526255B1CDB38DD0068CCA8 /* AnnaStatusPictureModel.m */; };
+		F526255F1CDB39D10068CCA8 /* AnnaStatusContentPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = F526255E1CDB39D10068CCA8 /* AnnaStatusContentPhotosView.m */; };
+		F52625621CDB39EB0068CCA8 /* AnnaContentPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F52625611CDB39EB0068CCA8 /* AnnaContentPhotoView.m */; };
 		F5322F261CD99FC500B34E90 /* AnnaStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5322F251CD99FC500B34E90 /* AnnaStatusModel.m */; };
 		F5322F291CD9A01A00B34E90 /* AnnaUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5322F281CD9A01A00B34E90 /* AnnaUserModel.m */; };
 		F5322F2C1CD9A76800B34E90 /* AnnaStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5322F2B1CD9A76800B34E90 /* AnnaStatusCell.m */; };
@@ -108,6 +111,12 @@
 		F50E81931CD6CCCB00F61C49 /* AnnaProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaProfileViewController.m; sourceTree = "<group>"; };
 		F50E81951CD6D67200F61C49 /* AnnaNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaNavViewController.h; sourceTree = "<group>"; };
 		F50E81961CD6D67300F61C49 /* AnnaNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaNavViewController.m; sourceTree = "<group>"; };
+		F526255A1CDB38DD0068CCA8 /* AnnaStatusPictureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaStatusPictureModel.h; sourceTree = "<group>"; };
+		F526255B1CDB38DD0068CCA8 /* AnnaStatusPictureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaStatusPictureModel.m; sourceTree = "<group>"; };
+		F526255D1CDB39D10068CCA8 /* AnnaStatusContentPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaStatusContentPhotosView.h; sourceTree = "<group>"; };
+		F526255E1CDB39D10068CCA8 /* AnnaStatusContentPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaStatusContentPhotosView.m; sourceTree = "<group>"; };
+		F52625601CDB39EB0068CCA8 /* AnnaContentPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaContentPhotoView.h; sourceTree = "<group>"; };
+		F52625611CDB39EB0068CCA8 /* AnnaContentPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaContentPhotoView.m; sourceTree = "<group>"; };
 		F5322F241CD99FC500B34E90 /* AnnaStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaStatusModel.h; sourceTree = "<group>"; };
 		F5322F251CD99FC500B34E90 /* AnnaStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaStatusModel.m; sourceTree = "<group>"; };
 		F5322F271CD9A01A00B34E90 /* AnnaUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaUserModel.h; sourceTree = "<group>"; };
@@ -374,6 +383,8 @@
 				F5322F251CD99FC500B34E90 /* AnnaStatusModel.m */,
 				F5322F271CD9A01A00B34E90 /* AnnaUserModel.h */,
 				F5322F281CD9A01A00B34E90 /* AnnaUserModel.m */,
+				F526255A1CDB38DD0068CCA8 /* AnnaStatusPictureModel.h */,
+				F526255B1CDB38DD0068CCA8 /* AnnaStatusPictureModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,6 +400,10 @@
 				F59B0D841CD855D10085201C /* AnnaImageLeftButton.m */,
 				F59B0D8A1CD87DFE0085201C /* AnnaDropMenu.h */,
 				F59B0D8B1CD87DFE0085201C /* AnnaDropMenu.m */,
+				F526255D1CDB39D10068CCA8 /* AnnaStatusContentPhotosView.h */,
+				F526255E1CDB39D10068CCA8 /* AnnaStatusContentPhotosView.m */,
+				F52625601CDB39EB0068CCA8 /* AnnaContentPhotoView.h */,
+				F52625611CDB39EB0068CCA8 /* AnnaContentPhotoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -853,6 +868,7 @@
 				F59B0D631CD833D60085201C /* MJType.m in Sources */,
 				F59B0D7B1CD833D60085201C /* UIImage+MultiFormat.m in Sources */,
 				F59B0D701CD833D60085201C /* MKAnnotationView+WebCache.m in Sources */,
+				F52625621CDB39EB0068CCA8 /* AnnaContentPhotoView.m in Sources */,
 				F59B0D4B1CD833D60085201C /* NSString+Emoji.m in Sources */,
 				F50E818E1CD6CC8200F61C49 /* AnnaHomeViewController.m in Sources */,
 				F58736211CD8C4010087BA86 /* AnnaAccountModel.m in Sources */,
@@ -868,6 +884,7 @@
 				F59B0D4C1CD833D60085201C /* NSString+Extension.m in Sources */,
 				F59B0D4A1CD833D60085201C /* NSDate+Extension.m in Sources */,
 				F59B0D611CD833D60085201C /* MJMember.m in Sources */,
+				F526255C1CDB38DD0068CCA8 /* AnnaStatusPictureModel.m in Sources */,
 				F59B0D6A1CD833D60085201C /* MJRefreshConst.m in Sources */,
 				F59B0D661CD833D60085201C /* NSObject+MJKeyValue.m in Sources */,
 				F50E814B1CD6C5EC00F61C49 /* main.m in Sources */,
@@ -880,6 +897,7 @@
 				F59B0D6F1CD833D60085201C /* UIView+MJExtension.m in Sources */,
 				F59B0D4D1CD833D60085201C /* UIBarButtonItem+Extension.m in Sources */,
 				F59B0D6C1CD833D60085201C /* MJRefreshHeaderView.m in Sources */,
+				F526255F1CDB39D10068CCA8 /* AnnaStatusContentPhotosView.m in Sources */,
 				F59B0D851CD855D10085201C /* AnnaImageLeftButton.m in Sources */,
 				F59B0D8C1CD87DFE0085201C /* AnnaDropMenu.m in Sources */,
 				F59B0D971CD8AFE00085201C /* AnnaLoginViewController.m in Sources */,

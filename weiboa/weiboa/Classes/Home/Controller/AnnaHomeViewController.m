@@ -14,7 +14,7 @@
 
 //网络
 #import "AnnaAFNTools.h"
-#import "MJExtension.h"
+#import "NSObject+MJKeyValue.h"
 
 //数据模型
 #import "AnnaStatusCell.h"
@@ -51,7 +51,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[AnnaStatusCell class] forCellReuseIdentifier:@"identifier"];
+//    [self.tableView registerClass:[AnnaStatusCell class] forCellReuseIdentifier:@"identifier"];
     
     [self getUserInfo];
     

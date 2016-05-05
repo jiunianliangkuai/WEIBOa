@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             scope = "0"
@@ -112,16 +112,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "weiboa/Classes/Main/View/AnnaStatusCell.m"
-            timestampString = "484028305.710894"
+            filePath = "weiboa/Classes/Home/Model/AnnaStatusFrameModel.m"
+            timestampString = "484128649.401967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "-initWithFrame:"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-setStatusModel:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
