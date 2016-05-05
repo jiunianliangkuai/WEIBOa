@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnnaStatusContentPhotosView : UIView
+@interface AnnaContentPhotosView : UIView
+
+@property (strong, nonatomic)NSArray *thumbnail_pic;
 
 @end

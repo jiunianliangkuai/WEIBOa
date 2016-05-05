@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class AnnaStatusPictureModel;
 @interface AnnaContentPhotoView : UIImageView
+
+@property (strong, nonatomic)AnnaStatusPictureModel *pictureModel;
 
 @end

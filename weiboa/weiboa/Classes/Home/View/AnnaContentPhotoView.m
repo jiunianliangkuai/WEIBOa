@@ -7,15 +7,21 @@
 //
 
 #import "AnnaContentPhotoView.h"
+#import "AnnaStatusPictureModel.h"
+#import "UIImageView+WebCache.h"
 
 @implementation AnnaContentPhotoView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    self.userInteractionEnabled = YES;
+    self.image = [UIImage imageNamed:@"tabbar_compose_button"];
+    
+    return self;
 }
-*/
 
+-(void)setPictureModel:(AnnaStatusPictureModel *)pictureModel{
+    _pictureModel = pictureModel;
+    [self sd_setImageWithURL:[NSURL URLWithString:pictureModel.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+}
 @end
