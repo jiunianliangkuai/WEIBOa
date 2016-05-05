@@ -40,7 +40,7 @@
 /** 转发微博正文 + 昵称 */
 @property (nonatomic, weak) UILabel * retweetContentLabel;
 /** 转发配图 */
-//@property (nonatomic, weak) AnnaContentPhotosView * retweetPhotosView;
+@property (nonatomic, weak) AnnaContentPhotosView * retweetPhotosView;
 
 /**
  *  微博工具栏
@@ -118,11 +118,29 @@
      [self.originView addSubview:contentPhotosView];
      
 //     转发微博体
+     UIView *retweetView = [[UIView alloc]init];
+     self.retweetView = retweetView;
+     self.retweetView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"timeline_retweet_background"]];
+     [self.contentView addSubview:retweetView];
+     
+//     初始化转发微博文本
+     UILabel *retweetContentLabel = [[UILabel alloc]init];
+     self.retweetContentLabel = retweetContentLabel;
+     self.retweetContentLabel.numberOfLines = 0;
+     [self.retweetView addSubview:retweetContentLabel];
+     
+//     初始化转发微博图片
+     AnnaContentPhotosView *reweetPhotosView = [[AnnaContentPhotosView alloc]init];
+     self.retweetPhotosView = reweetPhotosView;
+     [self.retweetView addSubview:reweetPhotosView];
      
      return self;
  }
  
 
+/**
+ *  通过导入的微博Frame模型计算frame
+ */
 -(void)setStatusFrameModel:(AnnaStatusFrameModel *)statusFrameModel{
     
 //    提取模型
@@ -184,7 +202,53 @@
     
 //    原创微博整体
     self.originView.frame = statusFrameModel.originViewFrame;
+    
+    if (!statusModel.retweeted_status) {
+        
+        self.retweetView.frame = CGRectZero;
+        self.retweetContentLabel.frame = CGRectZero;
+        self.retweetPhotosView.frame = CGRectZero;
+        
+        self.retweetView.hidden = YES;
+        
+    }else {
+        self.retweetView.hidden = NO;
+//        转发微博
+//        取出模型
+        AnnaStatusModel *retweetStatus = statusModel.retweeted_status;
+        
+        self.retweetContentLabel.attributedText = [self setupRetweetContentText:retweetStatus];
+        self.retweetContentLabel.frame = statusFrameModel.retweetContentLabelFrame;
+        if (!retweetStatus.pic_urls) {
+            
+            self.retweetPhotosView.frame = CGRectZero;
+            self.retweetView.frame = statusFrameModel.retweetViewFrame;
+            
+            self.retweetPhotosView.hidden = YES;
+
+        } else {
+            self.retweetPhotosView.frame = statusFrameModel.retweetPhotosViewFrame;
+            self.retweetPhotosView.thumbnail_pic = retweetStatus.pic_urls;
+
+            self.retweetView.frame = statusFrameModel.retweetViewFrame;
+            
+            self.retweetPhotosView.hidden = NO;
+        }
+        
+    }
 }
 
+-(NSAttributedString *)setupRetweetContentText:(AnnaStatusModel *)retweetStatus{
+    NSString *name = [NSString stringWithFormat:@"@%@",retweetStatus.user.name];
+    NSString *content = [NSString stringWithFormat:@":%@",retweetStatus.text];
+    NSString *contentText = [NSString stringWithFormat:@"%@%@",name,content];
+    
+    NSMutableAttributedString *retweetContentText = [[NSMutableAttributedString alloc]initWithString:contentText];
+    
+    [retweetContentText addAttribute:NSFontAttributeName value:contentLabelFont range:NSMakeRange(0, contentText.length)];
+    [retweetContentText addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(0, name.length)];
+    
+    return retweetContentText;
+}
 
 @end

@@ -116,28 +116,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weiboa/Classes/Home/Model/AnnaStatusFrameModel.m"
-            timestampString = "484141589.545149"
+            timestampString = "484145284.94549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-setStatusModel:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "weiboa/Classes/Home/View/AnnaContentPhotosView.m"
-            timestampString = "484141589.545149"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "-setThumbnail_pic:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

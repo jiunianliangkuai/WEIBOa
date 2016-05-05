@@ -71,12 +71,47 @@
     CGFloat originViewX = 0;
     CGFloat originViewY = 0;
     CGFloat originViewWidth = screenWidth;
-    CGFloat originViewHeight = MAX(CGRectGetMaxY(_contentLabelFrame), CGRectGetMaxY(_contentPhotosViewFrame)) + kMargin;
+    CGFloat originViewHeight = MAX(CGRectGetMaxY(_contentLabelFrame), CGRectGetMaxY(_contentPhotosViewFrame));
     
     self.originViewFrame = CGRectMake(originViewX, originViewY, originViewWidth, originViewHeight);
-    
+
+    if (!statusModel.retweeted_status) {
+//        原创微博行高
+        self.cellHeight = originViewHeight ;
+    }else {
+//    计算转发微博的frame
+//        取出模型
+        AnnaStatusModel *retweetModel = statusModel.retweeted_status;
+        
+        CGFloat retweetContentLabelX = kMargin;
+        CGFloat retweetContentLabelY = kMargin;
+        CGFloat retweetContentLabelMaxWidth = screenWidth - 2 * kMargin;
+        
+        NSString *retweetContentText = [NSString stringWithFormat:@"@%@:%@",retweetModel.user.name,retweetModel.text];
+        CGSize retweetContentLabelSize = [retweetContentText sizeWithFont:contentLabelFont maxW:retweetContentLabelMaxWidth];
+        self.retweetContentLabelFrame = (CGRect){{retweetContentLabelX, retweetContentLabelY}, retweetContentLabelSize};
+        
 //    行高
-    self.cellHeight = originViewHeight + kMargin;
+        if (!retweetModel.pic_urls) {
+            self.retweetPhotosViewFrame = CGRectZero;
+        } else {
+            CGFloat retweetPhotoViewX = kMargin;
+            CGFloat retweetPhotoViewY = CGRectGetMaxY(_retweetContentLabelFrame) + kMargin;
+            CGSize retweetPhotosViewSize = [AnnaContentPhotosView sizeWithCount:retweetModel.pic_urls.count];
+            
+            self.retweetPhotosViewFrame = (CGRect){{retweetPhotoViewX, retweetPhotoViewY}, retweetPhotosViewSize};
+        }
+        
+//        转发微博frame
+        CGFloat retweetViewX = 0;
+        CGFloat retweetViewY = CGRectGetMaxY(self.originViewFrame) + kMargin;
+        CGFloat retweetViewWidth = screenWidth;
+        CGFloat retweetViewHeight = MAX(CGRectGetMaxY(_retweetContentLabelFrame), CGRectGetMaxY(_retweetPhotosViewFrame)) + kMargin;
+        
+        self.retweetViewFrame = CGRectMake(retweetViewX, retweetViewY, retweetViewWidth, retweetViewHeight);
+        
+        self.cellHeight = CGRectGetMaxY(_retweetViewFrame) + kMargin;
+    }
 }
 
 
