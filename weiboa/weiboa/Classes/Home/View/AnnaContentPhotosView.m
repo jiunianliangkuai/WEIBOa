@@ -32,10 +32,7 @@
     _thumbnail_pic = thumbnail_pic;
     if (self.subviews.count) {
         
-        AnnaLog(@"%@",thumbnail_pic);
-        AnnaLog(@"%@",self.subviews);
         [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        AnnaLog(@"%@",self.subviews);
     }
     
     for (int i = 0; i < self.thumbnail_pic.count; i++ ) {

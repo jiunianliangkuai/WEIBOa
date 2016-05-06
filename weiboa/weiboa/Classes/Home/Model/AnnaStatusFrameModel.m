@@ -14,6 +14,7 @@
 
 #define kMargin 10
 #define kvipImageViewWH 15
+#define kStatusToolsBarHeight 30
 
 @implementation AnnaStatusFrameModel
 -(void)setStatusModel:(AnnaStatusModel *)statusModel{
@@ -71,13 +72,18 @@
     CGFloat originViewX = 0;
     CGFloat originViewY = 0;
     CGFloat originViewWidth = screenWidth;
-    CGFloat originViewHeight = MAX(CGRectGetMaxY(_contentLabelFrame), CGRectGetMaxY(_contentPhotosViewFrame));
+    CGFloat originViewHeight = MAX(CGRectGetMaxY(_contentLabelFrame), CGRectGetMaxY(_contentPhotosViewFrame)) + kMargin;
     
     self.originViewFrame = CGRectMake(originViewX, originViewY, originViewWidth, originViewHeight);
 
+//    计算toolsBar的y值
+    CGFloat statusToolsBarWidth = screenWidth;
+    CGFloat statusToolsBarX = 0;
+    CGFloat statusToolsBarY = CGRectGetMaxY(_originViewFrame);
+    
     if (!statusModel.retweeted_status) {
 //        原创微博行高
-        self.cellHeight = originViewHeight ;
+        self.cellHeight = originViewHeight + kStatusToolsBarHeight;
     }else {
 //    计算转发微博的frame
 //        取出模型
@@ -104,14 +110,19 @@
         
 //        转发微博frame
         CGFloat retweetViewX = 0;
-        CGFloat retweetViewY = CGRectGetMaxY(self.originViewFrame) + kMargin;
+        CGFloat retweetViewY = CGRectGetMaxY(self.originViewFrame);
         CGFloat retweetViewWidth = screenWidth;
         CGFloat retweetViewHeight = MAX(CGRectGetMaxY(_retweetContentLabelFrame), CGRectGetMaxY(_retweetPhotosViewFrame)) + kMargin;
         
         self.retweetViewFrame = CGRectMake(retweetViewX, retweetViewY, retweetViewWidth, retweetViewHeight);
         
-        self.cellHeight = CGRectGetMaxY(_retweetViewFrame) + kMargin;
+        self.cellHeight = CGRectGetMaxY(_retweetViewFrame) + kStatusToolsBarHeight + kMargin;
+        
+//        工具栏frame
+        statusToolsBarY = CGRectGetMaxY(_retweetViewFrame);
     }
+    
+    self.statusToolsBarFrame = CGRectMake(statusToolsBarX, statusToolsBarY, statusToolsBarWidth, kStatusToolsBarHeight);
 }
 
 

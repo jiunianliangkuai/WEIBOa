@@ -48,7 +48,7 @@
 @property (nonatomic, assign) CGRect retweetPhotosViewFrame;
 
 
-@property (nonatomic, assign) CGRect statuToolsBarFrame;
+@property (nonatomic, assign) CGRect statusToolsBarFrame;
 
 @property (assign, nonatomic)CGFloat cellHeight;
 

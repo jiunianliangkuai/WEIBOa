@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weiboa/Classes/Home/Model/AnnaStatusFrameModel.m"
-            timestampString = "484145284.94549"
+            timestampString = "484149625.243298"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "-setStatusModel:"
             landmarkType = "5">
          </BreakpointContent>

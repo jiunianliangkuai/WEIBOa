@@ -12,6 +12,7 @@
 #import "AnnaStatusModel.h"
 
 #import "AnnaContentPhotosView.h"
+#import "AnnaStatusToolsBar.h"
 #import "NSString+Extension.h"
 #import "AnnaStatusFrameModel.h"
 #import "UIImageView+WebCache.h"
@@ -34,6 +35,7 @@
 
 @property (weak, nonatomic)AnnaContentPhotosView *contentPhotosView;
 
+@property (weak, nonatomic)AnnaStatusToolsBar *statusToolsBar;
 
 /** 转发微博整体 */
 @property (nonatomic, weak) UIView * retweetView;
@@ -133,6 +135,11 @@
      AnnaContentPhotosView *reweetPhotosView = [[AnnaContentPhotosView alloc]init];
      self.retweetPhotosView = reweetPhotosView;
      [self.retweetView addSubview:reweetPhotosView];
+     
+//     初始化工具栏
+     AnnaStatusToolsBar *statusToolsBar = [[AnnaStatusToolsBar alloc]init];
+     self.statusToolsBar = statusToolsBar;
+     [self.contentView addSubview:statusToolsBar];
      
      return self;
  }
@@ -234,8 +241,9 @@
             
             self.retweetPhotosView.hidden = NO;
         }
-        
     }
+    
+    self.statusToolsBar.frame = statusFrameModel.statusToolsBarFrame;
 }
 
 -(NSAttributedString *)setupRetweetContentText:(AnnaStatusModel *)retweetStatus{

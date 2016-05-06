@@ -19,6 +19,7 @@
 		F526255C1CDB38DD0068CCA8 /* AnnaStatusPictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F526255B1CDB38DD0068CCA8 /* AnnaStatusPictureModel.m */; };
 		F526255F1CDB39D10068CCA8 /* AnnaContentPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = F526255E1CDB39D10068CCA8 /* AnnaContentPhotosView.m */; };
 		F52625621CDB39EB0068CCA8 /* AnnaContentPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F52625611CDB39EB0068CCA8 /* AnnaContentPhotoView.m */; };
+		F52F3E091CDB871A0066FC65 /* AnnaStatusToolsBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F52F3E081CDB871A0066FC65 /* AnnaStatusToolsBar.m */; };
 		F5322F261CD99FC500B34E90 /* AnnaStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5322F251CD99FC500B34E90 /* AnnaStatusModel.m */; };
 		F5322F291CD9A01A00B34E90 /* AnnaUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5322F281CD9A01A00B34E90 /* AnnaUserModel.m */; };
 		F5322F2C1CD9A76800B34E90 /* AnnaStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5322F2B1CD9A76800B34E90 /* AnnaStatusCell.m */; };
@@ -117,6 +118,8 @@
 		F526255E1CDB39D10068CCA8 /* AnnaContentPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaContentPhotosView.m; sourceTree = "<group>"; };
 		F52625601CDB39EB0068CCA8 /* AnnaContentPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaContentPhotoView.h; sourceTree = "<group>"; };
 		F52625611CDB39EB0068CCA8 /* AnnaContentPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaContentPhotoView.m; sourceTree = "<group>"; };
+		F52F3E071CDB871A0066FC65 /* AnnaStatusToolsBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaStatusToolsBar.h; sourceTree = "<group>"; };
+		F52F3E081CDB871A0066FC65 /* AnnaStatusToolsBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaStatusToolsBar.m; sourceTree = "<group>"; };
 		F5322F241CD99FC500B34E90 /* AnnaStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaStatusModel.h; sourceTree = "<group>"; };
 		F5322F251CD99FC500B34E90 /* AnnaStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaStatusModel.m; sourceTree = "<group>"; };
 		F5322F271CD9A01A00B34E90 /* AnnaUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaUserModel.h; sourceTree = "<group>"; };
@@ -404,6 +407,8 @@
 				F526255E1CDB39D10068CCA8 /* AnnaContentPhotosView.m */,
 				F52625601CDB39EB0068CCA8 /* AnnaContentPhotoView.h */,
 				F52625611CDB39EB0068CCA8 /* AnnaContentPhotoView.m */,
+				F52F3E071CDB871A0066FC65 /* AnnaStatusToolsBar.h */,
+				F52F3E081CDB871A0066FC65 /* AnnaStatusToolsBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -858,6 +863,7 @@
 				F59B0D4E1CD833D60085201C /* UITextView+Extension.m in Sources */,
 				F59B0D741CD833D60085201C /* SDWebImageDecoder.m in Sources */,
 				F59B0D601CD833D60085201C /* MJIvar.m in Sources */,
+				F52F3E091CDB871A0066FC65 /* AnnaStatusToolsBar.m in Sources */,
 				F59B0D7D1CD833D60085201C /* UIImageView+HighlightedWebCache.m in Sources */,
 				F50E81941CD6CCCB00F61C49 /* AnnaProfileViewController.m in Sources */,
 				F59B0D8F1CD891490085201C /* AnnatestTableViewContoller.m in Sources */,
