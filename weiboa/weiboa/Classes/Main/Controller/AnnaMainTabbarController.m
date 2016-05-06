@@ -12,10 +12,11 @@
 #import "AnnaMessageViewController.h"
 #import "AnnaDiscoverViewController.h"
 #import "AnnaProfileViewController.h"
+#import "AnnaComposeViewController.h"
 
 #import "AnnaNavViewController.h"
-
-@interface AnnaMainTabbarController ()
+#import "AnnaTabBar.h"
+@interface AnnaMainTabbarController ()<AnnaTabBarDelegate>
 
 @end
 
@@ -23,6 +24,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    AnnaTabBar *tabBar = [[AnnaTabBar alloc] init];
+    tabBar.delegate = self;
+    [self setValue:tabBar forKey:@"tabBar"];
+    
     AnnaHomeViewController *homeViewController = [[AnnaHomeViewController alloc]init];
     [self addChildViewController:homeViewController WithTitle:@"主页" ImageName:@"tabbar_home" SelectedImage:@"tabbar_home_selected"];
     
@@ -40,7 +46,7 @@
 - (void)addChildViewController:(UIViewController *)childController WithTitle:(NSString *)title ImageName:(NSString *)imageName SelectedImage:(NSString *)selectedImageName{
     
     AnnaNavViewController *navViewController  = [[AnnaNavViewController alloc]initWithRootViewController:childController];
-
+    
     
     childController.tabBarItem = [[UITabBarItem alloc]initWithTitle:title image:[UIImage imageNamed:imageName] selectedImage:[[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 
@@ -51,6 +57,16 @@
 
     
     [self addChildViewController:navViewController];
+}
+
+/**
+ *  modal出发送微博的控制器
+ */
+-(void)AnnaTabBarDelegate:(UITabBar *)tabbar uiButton:(UIButton *)button{
+    AnnaComposeViewController *composeViewController = [[AnnaComposeViewController alloc]init];
+    AnnaNavViewController *navViewController = [[AnnaNavViewController alloc]initWithRootViewController:composeViewController];
+    
+    [self presentViewController:navViewController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

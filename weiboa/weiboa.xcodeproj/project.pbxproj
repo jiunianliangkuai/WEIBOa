@@ -88,6 +88,8 @@
 		F59B0D921CD89AE10085201C /* AnnaAFNTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F59B0D911CD89AE10085201C /* AnnaAFNTools.m */; };
 		F59B0D971CD8AFE00085201C /* AnnaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59B0D961CD8AFE00085201C /* AnnaLoginViewController.m */; };
 		F59B0D9A1CD8B5A60085201C /* AnnaConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F59B0D991CD8B5A60085201C /* AnnaConst.m */; };
+		F5CF581C1CDCACBE00A6AFE0 /* AnnaComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CF581B1CDCACBE00A6AFE0 /* AnnaComposeViewController.m */; };
+		F5DCAB0C1CDC71D70080A7E9 /* AnnaTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DCAB0B1CDC71D70080A7E9 /* AnnaTabBar.m */; };
 		F5E32CA01CD96F2B00476327 /* AnnaSwitchRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E32C9F1CD96F2B00476327 /* AnnaSwitchRootViewController.m */; };
 		F5E32CA71CD9707400476327 /* AnnaNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E32CA61CD9707400476327 /* AnnaNewFeatureViewController.m */; };
 /* End PBXBuildFile section */
@@ -257,6 +259,10 @@
 		F59B0D961CD8AFE00085201C /* AnnaLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaLoginViewController.m; sourceTree = "<group>"; };
 		F59B0D981CD8B5A60085201C /* AnnaConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaConst.h; sourceTree = "<group>"; };
 		F59B0D991CD8B5A60085201C /* AnnaConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaConst.m; sourceTree = "<group>"; };
+		F5CF581A1CDCACBE00A6AFE0 /* AnnaComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaComposeViewController.h; sourceTree = "<group>"; };
+		F5CF581B1CDCACBE00A6AFE0 /* AnnaComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaComposeViewController.m; sourceTree = "<group>"; };
+		F5DCAB0A1CDC71D70080A7E9 /* AnnaTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaTabBar.h; sourceTree = "<group>"; };
+		F5DCAB0B1CDC71D70080A7E9 /* AnnaTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaTabBar.m; sourceTree = "<group>"; };
 		F5E32C9E1CD96F2B00476327 /* AnnaSwitchRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaSwitchRootViewController.h; sourceTree = "<group>"; };
 		F5E32C9F1CD96F2B00476327 /* AnnaSwitchRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaSwitchRootViewController.m; sourceTree = "<group>"; };
 		F5E32CA51CD9707400476327 /* AnnaNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaNewFeatureViewController.h; sourceTree = "<group>"; };
@@ -313,6 +319,7 @@
 		F50E81601CD6C6FC00F61C49 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F5CF58131CDCAB8A00A6AFE0 /* Compose */,
 				F5E32CA31CD9702A00476327 /* NewFeature */,
 				F59B0D941CD8AF9C0085201C /* OAuth */,
 				F59B0D861CD859D50085201C /* TestTemp */,
@@ -450,6 +457,8 @@
 			children = (
 				F59B0D801CD834980085201C /* AnnaSearchBar.h */,
 				F59B0D811CD834980085201C /* AnnaSearchBar.m */,
+				F5DCAB0A1CDC71D70080A7E9 /* AnnaTabBar.h */,
+				F5DCAB0B1CDC71D70080A7E9 /* AnnaTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -752,6 +761,39 @@
 			name = OAuth;
 			sourceTree = "<group>";
 		};
+		F5CF58131CDCAB8A00A6AFE0 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				F5CF58141CDCAB9B00A6AFE0 /* Controller */,
+				F5CF58161CDCABAC00A6AFE0 /* Model */,
+				F5CF58151CDCABA500A6AFE0 /* View */,
+			);
+			name = Compose;
+			sourceTree = "<group>";
+		};
+		F5CF58141CDCAB9B00A6AFE0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F5CF581A1CDCACBE00A6AFE0 /* AnnaComposeViewController.h */,
+				F5CF581B1CDCACBE00A6AFE0 /* AnnaComposeViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F5CF58151CDCABA500A6AFE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F5CF58161CDCABAC00A6AFE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		F5E32CA31CD9702A00476327 /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
@@ -891,6 +933,7 @@
 				F59B0D4A1CD833D60085201C /* NSDate+Extension.m in Sources */,
 				F59B0D611CD833D60085201C /* MJMember.m in Sources */,
 				F526255C1CDB38DD0068CCA8 /* AnnaStatusPictureModel.m in Sources */,
+				F5CF581C1CDCACBE00A6AFE0 /* AnnaComposeViewController.m in Sources */,
 				F59B0D6A1CD833D60085201C /* MJRefreshConst.m in Sources */,
 				F59B0D661CD833D60085201C /* NSObject+MJKeyValue.m in Sources */,
 				F50E814B1CD6C5EC00F61C49 /* main.m in Sources */,
@@ -908,6 +951,7 @@
 				F59B0D8C1CD87DFE0085201C /* AnnaDropMenu.m in Sources */,
 				F59B0D971CD8AFE00085201C /* AnnaLoginViewController.m in Sources */,
 				F50E81881CD6C95900F61C49 /* AnnaMainTabbarController.m in Sources */,
+				F5DCAB0C1CDC71D70080A7E9 /* AnnaTabBar.m in Sources */,
 				F59B0D571CD833D60085201C /* AFURLRequestSerialization.m in Sources */,
 				F59B0D711CD833D60085201C /* NSData+ImageContentType.m in Sources */,
 				F59B0D5E1CD833D60085201C /* MJConst.m in Sources */,
