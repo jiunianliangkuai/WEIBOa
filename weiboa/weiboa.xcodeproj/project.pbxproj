@@ -24,6 +24,7 @@
 		F5322F291CD9A01A00B34E90 /* AnnaUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5322F281CD9A01A00B34E90 /* AnnaUserModel.m */; };
 		F5322F2C1CD9A76800B34E90 /* AnnaStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5322F2B1CD9A76800B34E90 /* AnnaStatusCell.m */; };
 		F5322F2F1CD9A80700B34E90 /* AnnaStatusFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5322F2E1CD9A80700B34E90 /* AnnaStatusFrameModel.m */; };
+		F566101B1CDF6B740087178B /* AnnaInputToolsBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F566101A1CDF6B740087178B /* AnnaInputToolsBar.m */; };
 		F58736211CD8C4010087BA86 /* AnnaAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F58736201CD8C4010087BA86 /* AnnaAccountModel.m */; };
 		F58736261CD8C4880087BA86 /* AnnaAccountTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F58736251CD8C4880087BA86 /* AnnaAccountTools.m */; };
 		F59B0D491CD833D60085201C /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = F59B0CD41CD833D60085201C /* Foundation+Log.m */; };
@@ -131,6 +132,8 @@
 		F5322F2B1CD9A76800B34E90 /* AnnaStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnaStatusCell.m; path = ../../Main/View/AnnaStatusCell.m; sourceTree = "<group>"; };
 		F5322F2D1CD9A80700B34E90 /* AnnaStatusFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaStatusFrameModel.h; sourceTree = "<group>"; };
 		F5322F2E1CD9A80700B34E90 /* AnnaStatusFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaStatusFrameModel.m; sourceTree = "<group>"; };
+		F56610191CDF6B740087178B /* AnnaInputToolsBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaInputToolsBar.h; sourceTree = "<group>"; };
+		F566101A1CDF6B740087178B /* AnnaInputToolsBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaInputToolsBar.m; sourceTree = "<group>"; };
 		F587361F1CD8C4010087BA86 /* AnnaAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaAccountModel.h; sourceTree = "<group>"; };
 		F58736201CD8C4010087BA86 /* AnnaAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaAccountModel.m; sourceTree = "<group>"; };
 		F58736241CD8C4880087BA86 /* AnnaAccountTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaAccountTools.h; sourceTree = "<group>"; };
@@ -788,6 +791,8 @@
 			children = (
 				F5E838D31CDF46DD00CF2F48 /* AnnaPlaceholderTextView.h */,
 				F5E838D41CDF46DD00CF2F48 /* AnnaPlaceholderTextView.m */,
+				F56610191CDF6B740087178B /* AnnaInputToolsBar.h */,
+				F566101A1CDF6B740087178B /* AnnaInputToolsBar.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -897,6 +902,7 @@
 				F59B0D561CD833D60085201C /* AFURLConnectionOperation.m in Sources */,
 				F59B0D4F1CD833D60085201C /* UIView+Extension.m in Sources */,
 				F59B0D7C1CD833D60085201C /* UIImage+WebP.m in Sources */,
+				F566101B1CDF6B740087178B /* AnnaInputToolsBar.m in Sources */,
 				F59B0D821CD834980085201C /* AnnaSearchBar.m in Sources */,
 				F59B0D5F1CD833D60085201C /* MJFoundation.m in Sources */,
 				F59B0D731CD833D60085201C /* SDWebImageCompat.m in Sources */,

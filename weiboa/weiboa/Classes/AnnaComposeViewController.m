@@ -13,6 +13,7 @@
 #import "AnnaPlaceholderTextView.h"
 @interface AnnaComposeViewController ()
 
+@property (weak, nonatomic)UITextView *textView;
 @end
 
 @implementation AnnaComposeViewController
@@ -23,6 +24,8 @@
     [self setupNav];
     
     [self setupTextView];
+    
+    [self setupInputToolBar];
 }
 
 #pragma mark - 设置navtitle
@@ -86,15 +89,22 @@
     
 }
 
+/**
+ *  初始化textView
+ */
 -(void)setupTextView{
     AnnaPlaceholderTextView *placeholderTextView = [AnnaPlaceholderTextView placeholderTextViewWithText:@"你想分享什么呢" Font:[UIFont systemFontOfSize:15]];
     placeholderTextView.frame = self.view.frame;
+    [placeholderTextView becomeFirstResponder];
+    self.textView = placeholderTextView;
     [self.view addSubview:placeholderTextView];
-    
     
 }
 
-
+#pragma mark - 初始化输入工具条
+- (void)setupInputToolBar{
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

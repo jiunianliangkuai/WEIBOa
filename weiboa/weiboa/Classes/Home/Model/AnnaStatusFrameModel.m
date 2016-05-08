@@ -25,8 +25,8 @@
 //    头像的frame
     CGFloat iconImageViewX = kMargin;
     CGFloat iconImageViewY = kMargin;
-    CGFloat iconImageViewWidth = 50;
-    CGFloat iconImageViewHeight = 50;
+    CGFloat iconImageViewWidth = 45;
+    CGFloat iconImageViewHeight = 45;
     self.iconImageViewFrame = CGRectMake(iconImageViewX, iconImageViewY, iconImageViewWidth, iconImageViewHeight);
 
 //    nameLabel的frame
@@ -42,22 +42,9 @@
     CGFloat vipImageViewHeight = kvipImageViewWH;
     self.vipImageViewFrame = CGRectMake(vipImageViewX, vipImageViewY, vipImageViewWidth, vipImageViewHeight);
     
-//    计算timeLabel的frame
-    CGFloat timeLabelX = nameLabelX;
-    CGFloat timeLabelY = CGRectGetMaxY(_nameLabelFrame) + kMargin + kMargin;
-    CGSize timeLabelSize = [statusModel.created_at sizeWithFont:timeLabelFont];
-
-    self.timeLabelFrame = (CGRect){{timeLabelX, timeLabelY},timeLabelSize};
-    
-//    计算sourceLabel的frame
-    CGFloat sourceLabelX = CGRectGetMaxX(_timeLabelFrame) + kMargin;
-    CGFloat sourceLabelY = timeLabelY;
-    CGSize sourceLabelSize = [statusModel.sourceLabelText sizeWithFont:sourceLabelFont];
-    self.sourceLabelFrame = (CGRect){{sourceLabelX, sourceLabelY},sourceLabelSize};
-    
 //    计算微博正文的frame
     CGFloat contentLabelX = kMargin;
-    CGFloat contentLabelY = MAX(CGRectGetMaxY(_iconImageViewFrame) + kMargin, CGRectGetMaxY(_timeLabelFrame) + kMargin);
+    CGFloat contentLabelY = CGRectGetMaxY(_iconImageViewFrame) + kMargin ;
     CGFloat contentLabelMaxWidth = screenWidth - 2 * kMargin;
     CGSize contengLabelSize = [statusModel.text sizeWithFont:contentLabelFont maxW:contentLabelMaxWidth];
     self.contentLabelFrame = (CGRect){{contentLabelX, contentLabelY},contengLabelSize};
@@ -81,6 +68,7 @@
     CGFloat statusToolsBarX = 0;
     CGFloat statusToolsBarY = CGRectGetMaxY(_originViewFrame);
     
+#pragma 以下为转发微博
     if (!statusModel.retweeted_status) {
 //        原创微博行高
         self.cellHeight = originViewHeight + kStatusToolsBarHeight;

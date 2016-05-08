@@ -107,6 +107,7 @@
 //     初始化sourceLabel
      UILabel *sourceLabel = [[UILabel alloc]init];
      self.sourceLabel = sourceLabel;
+     self.sourceLabel.textColor = [UIColor grayColor];
      self.sourceLabel.font = sourceLabelFont;
      [self.originView addSubview:sourceLabel];
      
@@ -179,24 +180,22 @@
         self.vipImageView.hidden = YES;
         self.nameLabel.textColor = [UIColor blackColor];
     }
+//    时间label
+    self.timeLabel.text = statusModel.created_at;
+    self.timeLabel.frame = [self timeLabelFrame];
     
 //    来源label
-    self.sourceLabel.frame = statusFrameModel.sourceLabelFrame;
+    self.sourceLabel.frame = [self sourceLabelFrame];
     self.sourceLabel.text = statusModel.sourceLabelText;
     
-//    时间label
-    self.timeLabel.frame = statusFrameModel.timeLabelFrame;
-    self.timeLabel.size = [statusModel.created_at sizeWithFont:timeLabelFont];
-    self.timeLabel.text = statusModel.created_at;
-    
     if ([statusModel.created_at isEqualToString:@"刚刚"]) {
-    
+        
         self.timeLabel.textColor = [UIColor orangeColor];
     } else {
         
-        self.timeLabel.textColor = [UIColor blackColor];
+        self.timeLabel.textColor = [UIColor grayColor];
     }
-    
+
 //    正文label
     self.contentLabel.frame = statusFrameModel.contentLabelFrame;
     self.contentLabel.text = statusModel.text;
@@ -249,6 +248,26 @@
     self.statusToolsBar.frame = statusFrameModel.statusToolsBarFrame;
 }
 
+#pragma mark - 计算来源和时间的frame(因为这两需要时时更新
+-(CGRect)timeLabelFrame{
+    //    计算timeLabel的frame
+    CGFloat timeLabelX = self.nameLabel.x;
+    CGFloat timeLabelY = CGRectGetMaxY(self.nameLabel.frame) + kMargin;
+    CGSize timeLabelSize = [self.statusFrameModel.statusModel.created_at sizeWithFont:timeLabelFont];
+    
+    return (CGRect){{timeLabelX, timeLabelY}, timeLabelSize};
+}
+
+-(CGRect)sourceLabelFrame{
+    //    计算sourceLabel的frame
+    CGFloat sourceLabelX = CGRectGetMaxX(self.timeLabel.frame) + kMargin;
+    CGFloat sourceLabelY = self.timeLabel.y;
+    CGSize sourceLabelSize = [self.statusFrameModel.statusModel.sourceLabelText sizeWithFont:sourceLabelFont];
+    return (CGRect){{sourceLabelX, sourceLabelY},sourceLabelSize};
+    
+}
+
+#pragma mark - 合成转发微博的文本
 -(NSAttributedString *)setupRetweetContentText:(AnnaStatusModel *)retweetStatus{
     NSString *name = [NSString stringWithFormat:@"@%@",retweetStatus.user.name];
     NSString *content = [NSString stringWithFormat:@":%@",retweetStatus.text];

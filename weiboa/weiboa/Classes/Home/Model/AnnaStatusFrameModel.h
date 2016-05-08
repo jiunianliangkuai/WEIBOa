@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-#define nameLabelFont [UIFont systemFontOfSize:15]
+#define kMargin 10
 
-#define sourceLabelFont [UIFont systemFontOfSize:13]
+#define nameLabelFont [UIFont systemFontOfSize:13]
 
-#define timeLabelFont [UIFont systemFontOfSize:13]
+#define sourceLabelFont [UIFont systemFontOfSize:11]
+
+#define timeLabelFont [UIFont systemFontOfSize:11]
 
 #define contentLabelFont [UIFont systemFontOfSize:14]
 
@@ -31,10 +33,6 @@
 @property (assign, nonatomic)CGRect nameLabelFrame;
 
 @property (assign, nonatomic)CGRect vipImageViewFrame;
-
-@property (assign, nonatomic)CGRect sourceLabelFrame;
-
-@property (assign, nonatomic)CGRect timeLabelFrame;
 
 @property (assign, nonatomic)CGRect contentLabelFrame;
 
