@@ -15,6 +15,8 @@
 #define screenBounds [UIScreen mainScreen].bounds
 #define screenWidth [UIScreen mainScreen].bounds.size.width
 
+#define AnnaNotiifcationCenter [NSNotificationCenter defaultCenter]
+
 #ifdef DEBUG // 处于开发阶段
 #define AnnaLog(...) NSLog(__VA_ARGS__)
 #else // 处于发布阶段

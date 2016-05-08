@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupNav];
     
@@ -88,7 +87,10 @@
 }
 
 -(void)setupTextView{
-    AnnaPlaceholderTextView *placeholderTextView = [[AnnaPlaceholderTextView alloc]init];
+    AnnaPlaceholderTextView *placeholderTextView = [AnnaPlaceholderTextView placeholderTextViewWithText:@"你想分享什么呢" Font:[UIFont systemFontOfSize:15]];
+    placeholderTextView.frame = self.view.frame;
+    [self.view addSubview:placeholderTextView];
+    
     
 }
 
@@ -104,7 +106,7 @@
 
 
 #warning 下面为备选方法
-#pragma mark - navi的titleview的特殊实现方法,提供两个.一个是官方微博风格,一个是weico风格
+#pragma mark - navi的titleview的特殊实现方法,weico的头像风格
 - (UIView *)weicoTitleViewWithAccount:(AnnaAccountModel *)accountModel{
     UIImageView *iconImageView = [[UIImageView alloc]init];
     
