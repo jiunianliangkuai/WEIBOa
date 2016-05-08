@@ -25,6 +25,9 @@
 		F5322F2C1CD9A76800B34E90 /* AnnaStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5322F2B1CD9A76800B34E90 /* AnnaStatusCell.m */; };
 		F5322F2F1CD9A80700B34E90 /* AnnaStatusFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5322F2E1CD9A80700B34E90 /* AnnaStatusFrameModel.m */; };
 		F566101B1CDF6B740087178B /* AnnaInputToolsBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F566101A1CDF6B740087178B /* AnnaInputToolsBar.m */; };
+		F566101F1CDF7ADC0087178B /* AnnaDetailWeiboController.m in Sources */ = {isa = PBXBuildFile; fileRef = F566101E1CDF7ADC0087178B /* AnnaDetailWeiboController.m */; };
+		F56610221CDF9AD30087178B /* AnnaWeiboGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56610211CDF9AD30087178B /* AnnaWeiboGroupController.m */; };
+		F56610251CDFB4BB0087178B /* AnnaDetailStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F56610241CDFB4BB0087178B /* AnnaDetailStatusModel.m */; };
 		F58736211CD8C4010087BA86 /* AnnaAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F58736201CD8C4010087BA86 /* AnnaAccountModel.m */; };
 		F58736261CD8C4880087BA86 /* AnnaAccountTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F58736251CD8C4880087BA86 /* AnnaAccountTools.m */; };
 		F59B0D491CD833D60085201C /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = F59B0CD41CD833D60085201C /* Foundation+Log.m */; };
@@ -85,7 +88,6 @@
 		F59B0D851CD855D10085201C /* AnnaImageLeftButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F59B0D841CD855D10085201C /* AnnaImageLeftButton.m */; };
 		F59B0D891CD859EF0085201C /* AnnaTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59B0D881CD859EF0085201C /* AnnaTestViewController.m */; };
 		F59B0D8C1CD87DFE0085201C /* AnnaDropMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F59B0D8B1CD87DFE0085201C /* AnnaDropMenu.m */; };
-		F59B0D8F1CD891490085201C /* AnnatestTableViewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = F59B0D8E1CD891490085201C /* AnnatestTableViewContoller.m */; };
 		F59B0D921CD89AE10085201C /* AnnaAFNTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F59B0D911CD89AE10085201C /* AnnaAFNTools.m */; };
 		F59B0D971CD8AFE00085201C /* AnnaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59B0D961CD8AFE00085201C /* AnnaLoginViewController.m */; };
 		F59B0D9A1CD8B5A60085201C /* AnnaConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F59B0D991CD8B5A60085201C /* AnnaConst.m */; };
@@ -134,6 +136,12 @@
 		F5322F2E1CD9A80700B34E90 /* AnnaStatusFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaStatusFrameModel.m; sourceTree = "<group>"; };
 		F56610191CDF6B740087178B /* AnnaInputToolsBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaInputToolsBar.h; sourceTree = "<group>"; };
 		F566101A1CDF6B740087178B /* AnnaInputToolsBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaInputToolsBar.m; sourceTree = "<group>"; };
+		F566101D1CDF7ADC0087178B /* AnnaDetailWeiboController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaDetailWeiboController.h; sourceTree = "<group>"; };
+		F566101E1CDF7ADC0087178B /* AnnaDetailWeiboController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaDetailWeiboController.m; sourceTree = "<group>"; };
+		F56610201CDF9AD30087178B /* AnnaWeiboGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaWeiboGroupController.h; sourceTree = "<group>"; };
+		F56610211CDF9AD30087178B /* AnnaWeiboGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaWeiboGroupController.m; sourceTree = "<group>"; };
+		F56610231CDFB4BB0087178B /* AnnaDetailStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaDetailStatusModel.h; sourceTree = "<group>"; };
+		F56610241CDFB4BB0087178B /* AnnaDetailStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaDetailStatusModel.m; sourceTree = "<group>"; };
 		F587361F1CD8C4010087BA86 /* AnnaAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaAccountModel.h; sourceTree = "<group>"; };
 		F58736201CD8C4010087BA86 /* AnnaAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaAccountModel.m; sourceTree = "<group>"; };
 		F58736241CD8C4880087BA86 /* AnnaAccountTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaAccountTools.h; sourceTree = "<group>"; };
@@ -255,8 +263,6 @@
 		F59B0D881CD859EF0085201C /* AnnaTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaTestViewController.m; sourceTree = "<group>"; };
 		F59B0D8A1CD87DFE0085201C /* AnnaDropMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaDropMenu.h; sourceTree = "<group>"; };
 		F59B0D8B1CD87DFE0085201C /* AnnaDropMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaDropMenu.m; sourceTree = "<group>"; };
-		F59B0D8D1CD891490085201C /* AnnatestTableViewContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnatestTableViewContoller.h; path = ../../AnnatestTableViewContoller.h; sourceTree = "<group>"; };
-		F59B0D8E1CD891490085201C /* AnnatestTableViewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnatestTableViewContoller.m; path = ../../AnnatestTableViewContoller.m; sourceTree = "<group>"; };
 		F59B0D901CD89AE10085201C /* AnnaAFNTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaAFNTools.h; sourceTree = "<group>"; };
 		F59B0D911CD89AE10085201C /* AnnaAFNTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaAFNTools.m; sourceTree = "<group>"; };
 		F59B0D951CD8AFE00085201C /* AnnaLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaLoginViewController.h; sourceTree = "<group>"; };
@@ -325,12 +331,13 @@
 		F50E81601CD6C6FC00F61C49 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F5CF58131CDCAB8A00A6AFE0 /* Compose */,
 				F5E32CA31CD9702A00476327 /* NewFeature */,
 				F59B0D941CD8AF9C0085201C /* OAuth */,
+				F5CF58131CDCAB8A00A6AFE0 /* Compose */,
 				F59B0D861CD859D50085201C /* TestTemp */,
 				F50E816F1CD6C6FC00F61C49 /* Main */,
 				F50E81671CD6C6FC00F61C49 /* Home */,
+				F566101C1CDF7AA60087178B /* DetailWeibo */,
 				F50E81731CD6C6FC00F61C49 /* Message */,
 				F50E81611CD6C6FC00F61C49 /* Discover */,
 				F50E81791CD6C6FC00F61C49 /* Profile */,
@@ -401,6 +408,8 @@
 				F5322F281CD9A01A00B34E90 /* AnnaUserModel.m */,
 				F526255A1CDB38DD0068CCA8 /* AnnaStatusPictureModel.h */,
 				F526255B1CDB38DD0068CCA8 /* AnnaStatusPictureModel.m */,
+				F56610231CDFB4BB0087178B /* AnnaDetailStatusModel.h */,
+				F56610241CDFB4BB0087178B /* AnnaDetailStatusModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -410,8 +419,6 @@
 			children = (
 				F5322F2A1CD9A76800B34E90 /* AnnaStatusCell.h */,
 				F5322F2B1CD9A76800B34E90 /* AnnaStatusCell.m */,
-				F59B0D8D1CD891490085201C /* AnnatestTableViewContoller.h */,
-				F59B0D8E1CD891490085201C /* AnnatestTableViewContoller.m */,
 				F59B0D831CD855D10085201C /* AnnaImageLeftButton.h */,
 				F59B0D841CD855D10085201C /* AnnaImageLeftButton.m */,
 				F59B0D8A1CD87DFE0085201C /* AnnaDropMenu.h */,
@@ -422,6 +429,8 @@
 				F52625611CDB39EB0068CCA8 /* AnnaContentPhotoView.m */,
 				F52F3E071CDB871A0066FC65 /* AnnaStatusToolsBar.h */,
 				F52F3E081CDB871A0066FC65 /* AnnaStatusToolsBar.m */,
+				F56610201CDF9AD30087178B /* AnnaWeiboGroupController.h */,
+				F56610211CDF9AD30087178B /* AnnaWeiboGroupController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -546,6 +555,15 @@
 				F5E32C9F1CD96F2B00476327 /* AnnaSwitchRootViewController.m */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		F566101C1CDF7AA60087178B /* DetailWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				F566101D1CDF7ADC0087178B /* AnnaDetailWeiboController.h */,
+				F566101E1CDF7ADC0087178B /* AnnaDetailWeiboController.m */,
+			);
+			name = DetailWeibo;
 			sourceTree = "<group>";
 		};
 		F587361E1CD8C3E60087BA86 /* Model */ = {
@@ -920,7 +938,6 @@
 				F5E838D51CDF46DD00CF2F48 /* AnnaPlaceholderTextView.m in Sources */,
 				F59B0D7D1CD833D60085201C /* UIImageView+HighlightedWebCache.m in Sources */,
 				F50E81941CD6CCCB00F61C49 /* AnnaProfileViewController.m in Sources */,
-				F59B0D8F1CD891490085201C /* AnnatestTableViewContoller.m in Sources */,
 				F59B0D6E1CD833D60085201C /* UIScrollView+MJRefresh.m in Sources */,
 				F59B0D6D1CD833D60085201C /* UIScrollView+MJExtension.m in Sources */,
 				F50E814E1CD6C5EC00F61C49 /* AppDelegate.m in Sources */,
@@ -928,6 +945,7 @@
 				F59B0D631CD833D60085201C /* MJType.m in Sources */,
 				F59B0D7B1CD833D60085201C /* UIImage+MultiFormat.m in Sources */,
 				F59B0D701CD833D60085201C /* MKAnnotationView+WebCache.m in Sources */,
+				F56610221CDF9AD30087178B /* AnnaWeiboGroupController.m in Sources */,
 				F52625621CDB39EB0068CCA8 /* AnnaContentPhotoView.m in Sources */,
 				F59B0D4B1CD833D60085201C /* NSString+Emoji.m in Sources */,
 				F50E818E1CD6CC8200F61C49 /* AnnaHomeViewController.m in Sources */,
@@ -946,6 +964,7 @@
 				F59B0D611CD833D60085201C /* MJMember.m in Sources */,
 				F526255C1CDB38DD0068CCA8 /* AnnaStatusPictureModel.m in Sources */,
 				F5CF581C1CDCACBE00A6AFE0 /* AnnaComposeViewController.m in Sources */,
+				F56610251CDFB4BB0087178B /* AnnaDetailStatusModel.m in Sources */,
 				F59B0D6A1CD833D60085201C /* MJRefreshConst.m in Sources */,
 				F59B0D661CD833D60085201C /* NSObject+MJKeyValue.m in Sources */,
 				F50E814B1CD6C5EC00F61C49 /* main.m in Sources */,
@@ -953,6 +972,7 @@
 				F59B0D921CD89AE10085201C /* AnnaAFNTools.m in Sources */,
 				F5322F261CD99FC500B34E90 /* AnnaStatusModel.m in Sources */,
 				F58736261CD8C4880087BA86 /* AnnaAccountTools.m in Sources */,
+				F566101F1CDF7ADC0087178B /* AnnaDetailWeiboController.m in Sources */,
 				F5322F2C1CD9A76800B34E90 /* AnnaStatusCell.m in Sources */,
 				F59B0D671CD833D60085201C /* NSObject+MJMember.m in Sources */,
 				F59B0D6F1CD833D60085201C /* UIView+MJExtension.m in Sources */,

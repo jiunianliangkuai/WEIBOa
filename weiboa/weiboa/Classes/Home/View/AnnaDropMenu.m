@@ -7,7 +7,7 @@
 //
 
 #import "AnnaDropMenu.h"
-
+#import "AnnaWeiboGroupController.h"
 @interface AnnaDropMenu ()
 
 @property (weak, nonatomic)UIImageView *menuView;
@@ -50,8 +50,9 @@
 }
 
 #pragma mark - 数据方法
--(void)setContentController:(UIViewController *)contentController{
+-(void)setContentController:(AnnaWeiboGroupController *)contentController{
     _contentController = contentController;
+    contentController.delegate = self;
     CGFloat horizonMargin = 8;
     CGFloat topMarin = 15;
     
@@ -66,10 +67,19 @@
     
 }
 
+#pragma mark - 数据源的代理方法
+- (void)weiboGroupControllerDidSelectGroup:(AnnaWeiboGroupType)type{
+    if ([self.delegate respondsToSelector:@selector(dropMenuDelegateDropMenu:WithGroupType:)]) {
+        [self.delegate dropMenuDelegateDropMenu:self WithGroupType:type];
+    }
+    [self dismiss];
+    
+}
+
 #pragma mark - 显示和隐藏方法
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    if ([self.delegate respondsToSelector:@selector(dropMenuDelegateDropMenu:)]) {
-        [self.delegate dropMenuDelegateDropMenu:self];
+    if ([self.delegate respondsToSelector:@selector(dropMenuDelegateDropMenu:WithGroupType:)]) {
+        [self.delegate dropMenuDelegateDropMenu:self WithGroupType:AnnaWeiboGroupTypeNotSelect];
     }
     [self dismiss];
     

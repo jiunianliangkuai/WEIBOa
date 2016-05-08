@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weiboa/Classes/Home/Controller/AnnaHomeViewController.m"
-            timestampString = "484026634.902054"
+            timestampString = "484423025.807827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "-getNewData"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weiboa/Classes/Home/Controller/AnnaHomeViewController.m"
-            timestampString = "484026634.902054"
+            timestampString = "484423354.093912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "-getNewData"
             landmarkType = "5">
          </BreakpointContent>
@@ -123,6 +123,22 @@
             endingLineNumber = "110"
             landmarkName = "-setStatusModel:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weiboa/Classes/Main/vender/MJExtension/MJIvar.m"
+            timestampString = "484414072.561084"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "@implementation MJIvar"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

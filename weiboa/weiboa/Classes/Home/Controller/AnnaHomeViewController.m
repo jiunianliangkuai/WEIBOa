@@ -29,13 +29,16 @@
 
 //测试
 #import "AnnaTestViewController.h"
-#import "AnnatestTableViewContoller.h"
+
+//跳转
+#import "AnnaDetailWeiboController.h"
 
 @interface AnnaHomeViewController ()<AnnaDropMenuDelegate>
 
 @property (weak, nonatomic)AnnaImageLeftButton *titleBtn;
 
 @property (strong, nonatomic)NSMutableArray *statuses;
+
 
 @end
 
@@ -50,8 +53,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    [self.tableView registerClass:[AnnaStatusCell class] forCellReuseIdentifier:@"identifier"];
     
     [self getUserInfo];
     
@@ -93,15 +94,18 @@
     btn.selected = YES;
     AnnaDropMenu *dropMenu = [AnnaDropMenu dropMenu];
     dropMenu.delegate = self;
-    dropMenu.contentController = [[AnnatestTableViewContoller alloc]init];
+    dropMenu.contentController = [[AnnaWeiboGroupController alloc]init];
     [dropMenu addOn:btn];
     [dropMenu show];
+    
 }
 
 
 #pragma mark - 下拉菜单代理方法
--(void)dropMenuDelegateDropMenu:(AnnaDropMenu *)dropMenu{
+-(void)dropMenuDelegateDropMenu:(AnnaDropMenu *)dropMenu WithGroupType:(AnnaWeiboGroupType)type{
+    
     self.titleBtn.selected = NO;
+    [self getSelfData];
 }
 
 
@@ -124,6 +128,76 @@
     }];
 }
 
+- (void)weiboGroupControllerDidSelectGroup:(AnnaWeiboGroupType)type{
+    AnnaLog(@"%ld",(long)type);
+}
+
+#pragma mark - 获取自己的微博数据
+-(void)getSelfData{
+    [self.statuses removeAllObjects];
+
+    AnnaAccountModel *accountModel = [AnnaAccountTools loadAccount];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = accountModel.access_token;
+    
+    params[@"uid"] = accountModel.uid;
+    
+    [AnnaAFNTools AFNToolsGETWithURL:@"https://api.weibo.com/2/statuses/user_timeline/ids.json" parameters:params success:^(NSDictionary * responseObject) {
+        
+        AnnaLog(@"%@",responseObject);
+        
+        NSArray *array = responseObject[@"statuses"];
+        
+        NSMutableDictionary *statusParams = [NSMutableDictionary dictionary];
+        
+        for (NSString *statusID in array) {
+            
+            statusParams[@"access_token"] = accountModel.access_token;
+            
+            statusParams[@"id"] = statusID;
+            
+            NSMutableString *urlString = [NSMutableString string];
+            [urlString appendFormat:@"https://api.weibo.com/2/statuses/show.json"];
+            [urlString appendFormat:@"?"];
+            [urlString appendFormat:@"access_token=%@",accountModel.access_token];
+            [urlString appendFormat:@"&"];
+            [urlString appendFormat:@"id=%@",statusID];
+            
+            [AnnaAFNTools AFNToolsGETWithURL:urlString parameters:nil success:^(id responseObject) {
+                AnnaLog(@"%@",responseObject);
+            } failure:^(NSError *error) {
+                AnnaLog(@"%@",error);
+                
+                
+                
+            }];
+        }
+        
+//        NSArray *temp= [AnnaStatusModel objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        
+//        NSMutableArray *mutArr = [NSMutableArray array];
+//        for (AnnaStatusModel *statusModel in temp) {
+//            AnnaStatusFrameModel *statusFrameModel = [[AnnaStatusFrameModel alloc]init];
+//            statusFrameModel.statusModel = statusModel;
+//            [mutArr addObject:statusFrameModel];
+//        }
+//        
+//        NSRange range ;
+//        range.length = temp.count;
+//        range.location = 0;
+//        
+//        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
+//        [self.statuses insertObjects:mutArr atIndexes:indexSet];
+        
+        [self.tableView reloadData];
+
+    } failure:^(NSError *error) {
+        AnnaLog(@"%@",error);
+        
+    }];
+}
+
 
 #pragma mark - 获取最新的微博
 -(void)getNewData{
@@ -132,7 +206,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = accountModel.access_token;
     
-    [AnnaAFNTools AFNToolsGETWithURL:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(NSDictionary * responseObject) {
+    [AnnaAFNTools AFNToolsGETWithURL:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(NSDictionary * responseObject) {
         NSArray *temp= [AnnaStatusModel objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
         
         NSMutableArray *mutArr = [NSMutableArray array];
@@ -178,6 +252,17 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [self.statuses[indexPath.row] cellHeight];
+}
+
+#pragma mark - 跳转到微博详情
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    AnnaStatusFrameModel *statusFrameModel = self.statuses[indexPath.row];
+    
+    AnnaStatusModel *statusModel = statusFrameModel.statusModel;
+    
+    AnnaDetailWeiboController *detailWeiboController = [AnnaDetailWeiboController detailWeiboControllerWithStatusModel:statusModel];
+    
+    [self.navigationController pushViewController:detailWeiboController animated:YES];
 }
 
 /*

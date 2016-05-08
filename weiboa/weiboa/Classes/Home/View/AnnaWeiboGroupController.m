@@ -1,18 +1,29 @@
 //
-//  AnnatestTableViewContoller.m
+//  AnnaWeiboGroupController.m
 //  weiboa
 //
-//  Created by Liangkuai on 16/5/3.
+//  Created by Liangkuai on 16/5/9.
 //  Copyright © 2016年 Liangkuai. All rights reserved.
 //
 
-#import "AnnatestTableViewContoller.h"
+#import "AnnaWeiboGroupController.h"
 
-@interface AnnatestTableViewContoller ()
+@interface AnnaWeiboGroupController ()
 
+@property (strong, nonatomic)NSMutableArray *contentArray;
 @end
 
-@implementation AnnatestTableViewContoller
+@implementation AnnaWeiboGroupController
+
+-(NSMutableArray *)contentArray{
+    if (!_contentArray) {
+        _contentArray = [NSMutableArray array];
+        [_contentArray addObject:@"首页"];
+        [_contentArray addObject:@"我的"];
+        
+    }
+    return _contentArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,29 +54,43 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.contentArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"identifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
-    cell.textLabel.text = @"test DropMenu Content";
+    cell.textLabel.text = self.contentArray[indexPath.row];
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
     cell.textLabel.textColor = [UIColor whiteColor];
     
     cell.backgroundView = nil;
     cell.backgroundColor = [UIColor clearColor];
     
-//    一般不设置
-//    UIView *sepreateView = [[UIView alloc]initWithFrame:CGRectMake(0, cell.bounds.size.height - 0.5, cell.bounds.size.width, 0.5)];
-//    sepreateView.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
-//    
-//    [cell addSubview:sepreateView];
+    //    一般不设置
+    //    UIView *sepreateView = [[UIView alloc]initWithFrame:CGRectMake(0, cell.bounds.size.height - 0.5, cell.bounds.size.width, 0.5)];
+    //    sepreateView.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
+    //
+    //    [cell addSubview:sepreateView];
     
     return cell;
-    
-
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([self.delegate respondsToSelector:@selector(weiboGroupControllerDidSelectGroup:)]) {
+        [self.delegate weiboGroupControllerDidSelectGroup:AnnaWeiboGroupTypeSelf];
+    }
+}
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+*/
 
 /*
 // Override to support conditional editing of the table view.

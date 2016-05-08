@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AnnaWeiboGroupController.h"
 @class AnnaDropMenu;
-
 @protocol AnnaDropMenuDelegate <NSObject>
 
-- (void)dropMenuDelegateDropMenu:(AnnaDropMenu *)dropMenu;
+- (void)dropMenuDelegateDropMenu:(AnnaDropMenu *)dropMenu WithGroupType:(AnnaWeiboGroupType)type;
 
 @end
 
