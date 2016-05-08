@@ -74,16 +74,17 @@
 -(UIView *)weiboTitleViewWithAccount:(AnnaAccountModel *)accountModel{
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 40)];
 
-    NSString *name = [NSString stringWithFormat:accountModel.name];
+    NSString *name = accountModel.name;
     NSString *send = [NSString stringWithFormat:@"发微博"];
     NSString *titleString = [NSString stringWithFormat:@"%@\n%@",send,name];
     
     NSMutableAttributedString *mutAttrString = [[NSMutableAttributedString alloc]initWithString:titleString];
 
+    
 //    发微博文字部分
     [mutAttrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, send.length)];
 //    用户名部分
-    [mutAttrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13] range:NSMakeRange(send.length, name.length)];
+    [mutAttrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13] range:NSMakeRange(send.length + 1, name.length)];
     
     titleLabel.attributedText = mutAttrString;
     titleLabel.textAlignment = NSTextAlignmentCenter;

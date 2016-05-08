@@ -11,6 +11,7 @@
 @implementation AnnaStatusToolsBar
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
+    self.backgroundColor = [UIColor grayColor];
     [self setupButtonsWithImage:@"timeline_icon_retweet" backgroundImage:@"timeline_card_bottom_background" highlightBackgroundImage:@"timeline_card_bottom_background_highlighted"];
     
     [self setupButtonsWithImage:@"timeline_icon_comment" backgroundImage:@"timeline_card_bottom_background" highlightBackgroundImage:@"timeline_card_bottom_background_highlighted"];

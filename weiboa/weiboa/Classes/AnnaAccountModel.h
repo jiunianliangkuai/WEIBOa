@@ -24,4 +24,10 @@
 /** 用户的昵称 */
 @property (nonatomic, copy) NSString *name;
 
+/** 用户头像地址 */
+@property (nonatomic, strong)NSString *profile_image_url;
+
+/** 用户头像数据 */
+@property (nonatomic, strong)NSString *iconBase64;
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "AnnaAccountModel.h"
-
+#import "SDWebImageManager.h"
 @interface AnnaAccountModel ()<NSCoding>
 
 @end

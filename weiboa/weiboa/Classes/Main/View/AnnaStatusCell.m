@@ -74,6 +74,9 @@
  -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
      self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
      
+//     取消选中高亮
+     self.selectionStyle = UITableViewCellSelectionStyleNone;
+     
 //     原创微博部分
      UIView *originView = [[UIView alloc]init];
      self.originView = originView;
