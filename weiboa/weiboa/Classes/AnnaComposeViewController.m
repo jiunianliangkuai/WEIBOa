@@ -10,6 +10,7 @@
 #import "AnnaAccountTools.h"
 #import "AnnaAccountModel.h"
 
+#import "AnnaPlaceholderTextView.h"
 @interface AnnaComposeViewController ()
 
 @end
@@ -29,15 +30,14 @@
 - (void)setupNav{
     
 //    设置左侧取消按钮
-#warning 这里的文字颜色问题还没有解决.可以想到的方法只有用uibutton来代替而已
+#warning 这里的文字颜色问题还没有解决.可以想到的方法只有用uibutton来代替而已 add:好像用文本颜色就可以解决
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(dismiss)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor orangeColor];
 //    设置右侧发送按钮
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(dismiss)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(sendWeibo)];
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor orangeColor];
 
     self.navigationItem.rightBarButtonItem.enabled = NO;
-    
 /*    用文本属性的方法似乎没有直接设置文本颜色好用
 //    属性字典
 //    NSDictionary *attrHighlightDict = [NSDictionary dictionaryWithObject:[UIColor grayColor] forKey:NSForegroundColorAttributeName];
@@ -56,34 +56,20 @@
     self.navigationItem.titleView = [self weiboTitleViewWithAccount:accountModel];
 }
 
--(void)dismiss{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)setupTextView{
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-#pragma mark - navi的titleview的特殊实现方法,提供两个.一个是官方微博风格,一个是weico风格
+#pragma mark - 设置navititle
 -(UIView *)weiboTitleViewWithAccount:(AnnaAccountModel *)accountModel{
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 40)];
-
+    
     NSString *name = accountModel.name;
     NSString *send = [NSString stringWithFormat:@"发微博"];
     NSString *titleString = [NSString stringWithFormat:@"%@\n%@",send,name];
     
     NSMutableAttributedString *mutAttrString = [[NSMutableAttributedString alloc]initWithString:titleString];
-
     
-//    发微博文字部分
+    
+    //    发微博文字部分
     [mutAttrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, send.length)];
-//    用户名部分
+    //    用户名部分
     [mutAttrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13] range:NSMakeRange(send.length + 1, name.length)];
     
     titleLabel.attributedText = mutAttrString;
@@ -92,6 +78,33 @@
     return titleLabel;
 }
 
+#pragma mark - 两个标题按钮
+-(void)dismiss{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)sendWeibo{
+    
+}
+
+-(void)setupTextView{
+    AnnaPlaceholderTextView *placeholderTextView = [[AnnaPlaceholderTextView alloc]init];
+    
+}
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+
+
+
+#warning 下面为备选方法
+#pragma mark - navi的titleview的特殊实现方法,提供两个.一个是官方微博风格,一个是weico风格
 - (UIView *)weicoTitleViewWithAccount:(AnnaAccountModel *)accountModel{
     UIImageView *iconImageView = [[UIImageView alloc]init];
     

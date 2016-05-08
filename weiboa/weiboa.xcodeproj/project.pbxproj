@@ -92,6 +92,7 @@
 		F5DCAB0C1CDC71D70080A7E9 /* AnnaTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DCAB0B1CDC71D70080A7E9 /* AnnaTabBar.m */; };
 		F5E32CA01CD96F2B00476327 /* AnnaSwitchRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E32C9F1CD96F2B00476327 /* AnnaSwitchRootViewController.m */; };
 		F5E32CA71CD9707400476327 /* AnnaNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E32CA61CD9707400476327 /* AnnaNewFeatureViewController.m */; };
+		F5E838D51CDF46DD00CF2F48 /* AnnaPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E838D41CDF46DD00CF2F48 /* AnnaPlaceholderTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -267,6 +268,8 @@
 		F5E32C9F1CD96F2B00476327 /* AnnaSwitchRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaSwitchRootViewController.m; sourceTree = "<group>"; };
 		F5E32CA51CD9707400476327 /* AnnaNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaNewFeatureViewController.h; sourceTree = "<group>"; };
 		F5E32CA61CD9707400476327 /* AnnaNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaNewFeatureViewController.m; sourceTree = "<group>"; };
+		F5E838D31CDF46DD00CF2F48 /* AnnaPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnaPlaceholderTextView.h; sourceTree = "<group>"; };
+		F5E838D41CDF46DD00CF2F48 /* AnnaPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnaPlaceholderTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -783,6 +786,8 @@
 		F5CF58151CDCABA500A6AFE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F5E838D31CDF46DD00CF2F48 /* AnnaPlaceholderTextView.h */,
+				F5E838D41CDF46DD00CF2F48 /* AnnaPlaceholderTextView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -906,6 +911,7 @@
 				F59B0D741CD833D60085201C /* SDWebImageDecoder.m in Sources */,
 				F59B0D601CD833D60085201C /* MJIvar.m in Sources */,
 				F52F3E091CDB871A0066FC65 /* AnnaStatusToolsBar.m in Sources */,
+				F5E838D51CDF46DD00CF2F48 /* AnnaPlaceholderTextView.m in Sources */,
 				F59B0D7D1CD833D60085201C /* UIImageView+HighlightedWebCache.m in Sources */,
 				F50E81941CD6CCCB00F61C49 /* AnnaProfileViewController.m in Sources */,
 				F59B0D8F1CD891490085201C /* AnnatestTableViewContoller.m in Sources */,
