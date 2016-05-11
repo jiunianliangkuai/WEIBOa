@@ -12,12 +12,16 @@
 #import "AnnaStatusModel.h"
 #import "AnnaContentPhotosView.h"
 
-#define kMargin 10
 #define kvipImageViewWH 15
 #define kStatusToolsBarHeight 30
 
 @implementation AnnaStatusFrameModel
+
+const int kMargin  = 10;
+
 -(void)setStatusModel:(AnnaStatusModel *)statusModel{
+
+    
     _statusModel = statusModel;
     AnnaUserModel *userModel = statusModel.user;
     

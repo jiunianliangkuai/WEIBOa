@@ -46,7 +46,7 @@
     params[@"access_token"] = accountModel.access_token;
     
     [AnnaAFNTools AFNToolsGETWithURL:@"https://api.weibo.com/2/statuses/show.json" parameters:params success:^(NSDictionary * responseObject) {
-        AnnaLog(@"%@",responseObject);
+//        AnnaLog(@"%@",responseObject);
     } failure:^(NSError *error) {
         AnnaLog(@"error===================%@",error);
     }];

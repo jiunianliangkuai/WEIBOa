@@ -40,13 +40,14 @@
  */
 -(void)addOn:(UIView *)targetView{
     UIWindow *currentWindow = [[UIApplication sharedApplication].windows lastObject];
-    self.menuView.frame = CGRectMake(40, 40, 217, 300);
-    
+//    self.menuView.frame = CGRectMake(40, 40, 217, 300);
+    self.menuView.size = CGSizeMake(217, 300);
     CGRect realRect = [targetView convertRect:targetView.bounds toView:currentWindow];
     
     self.menuView.y = CGRectGetMaxY(realRect);
     self.menuView.centerX = CGRectGetMidX(realRect);
-    
+    AnnaLog(@"%f",CGRectGetMidX(realRect));
+    AnnaLog(@"%@",NSStringFromCGRect(self.menuView.frame));
 }
 
 #pragma mark - 数据方法

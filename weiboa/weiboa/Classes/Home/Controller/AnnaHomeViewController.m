@@ -105,7 +105,7 @@
 -(void)dropMenuDelegateDropMenu:(AnnaDropMenu *)dropMenu WithGroupType:(AnnaWeiboGroupType)type{
     
     self.titleBtn.selected = NO;
-    [self getSelfData];
+//    [self getSelfData];
 }
 
 
@@ -129,7 +129,7 @@
 }
 
 - (void)weiboGroupControllerDidSelectGroup:(AnnaWeiboGroupType)type{
-    AnnaLog(@"%ld",(long)type);
+//    AnnaLog(@"%ld",(long)type);
 }
 
 #pragma mark - 获取自己的微博数据

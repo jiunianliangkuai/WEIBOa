@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#define kMargin 10
+//#define kMargin 10
+
+extern const int kMargin;
 
 #define nameLabelFont [UIFont systemFontOfSize:13]
 
